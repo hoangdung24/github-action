@@ -1,8 +1,11 @@
-name: Output infomation
-on: workflow_dispatch
+name: Practice make perfect
+on:
+  push:
 jobs:
-  info:
+  print_context:
     runs-on: ubuntu-latest
     steps:
-      - name: Output Github context
-        run: echo "${{ toJSON(github) }}"
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
