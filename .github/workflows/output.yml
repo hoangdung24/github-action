@@ -26,7 +26,8 @@ jobs:
       - name: Output data
         id: output-data
         run: |
-          echo $((RANDOM)) >> "$GITHUB_OUTPUT"
+          the_secret=$((RANDOM))
+          echo secret-number=$((RANDOM)) >> "$GITHUB_OUTPUT"
       - name: User Output
         run: |
           echo "the secret number is ${{ steps.output-data.outputs.secret-number }}"
