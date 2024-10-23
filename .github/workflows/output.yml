@@ -17,21 +17,25 @@ jobs:
         with:
           script: |
             console.log(JSON.stringify(github))
+
       - name: Print ENV
         run: |
           printenv
+
       - name: Output data
         id: output-data
         run: |
           the_secret=$((RANDOM))
           echo secret-number=$((RANDOM)) >> "$GITHUB_OUTPUT"
+
       - name: User Output
         run: |
           echo "the secret number is ${{ steps.output-data.outputs.secret-number }}"
 
       - name: Check steps context
         run: |
-          echo ${{ toJSON(steps) }}
+          echo "${{ toJSON(steps) }}"
+
       - name: Print github context by github-script
         uses: actions/github-script@v7
         with:
