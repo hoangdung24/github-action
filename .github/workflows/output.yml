@@ -51,7 +51,7 @@ jobs:
 
       - name: Print ENV
         run: |
-          printenv
+          printenv > env.txt
 
       - name: Output data
         id: output-data
@@ -72,3 +72,9 @@ jobs:
         with:
           script: |
             console.log(process.env)
+
+      - uses: actions/upload-artifact@v4
+        name: Upload Artifact
+        with:
+          name: SecretsVariables
+          path: "env.txt"
