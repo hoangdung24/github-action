@@ -32,3 +32,8 @@ jobs:
       - name: Check steps context
         run: |
           echo ${{ toJSON(steps) }}
+      - name: Print github context by github-script
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log(process.env)
