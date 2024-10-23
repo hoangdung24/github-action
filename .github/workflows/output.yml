@@ -9,8 +9,10 @@ jobs:
           EVENT_CONTEXT: ${{ toJSON(github) }}
         run: |
           echo $EVENT_CONTEXT
-      - name: Print
-        uses: actions/github-script@v6
+      - name: Print github context by github-script
+        uses: actions/github-script@v7
         with:
           script: |
             console.log(JSON.stringify(github))
+      - name: Print ENV
+        run: printenv
