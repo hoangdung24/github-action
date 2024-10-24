@@ -83,12 +83,15 @@ jobs:
           name: SecretsVariables
           path: "env.txt"
 
+      - name: Change PWD
+        working-directory: ./scripts
+        run: |
+          pwd
+          ls -la
+    
       - name: Check PWD
         run: |
           pwd
           ls -la
 
-      # - name: Change PWD
-      #   working-directory: 
-      #   run: |
-      #     pwd
+      
