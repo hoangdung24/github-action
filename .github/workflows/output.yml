@@ -4,6 +4,7 @@ on:
 jobs:
   print_context:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
@@ -86,8 +87,11 @@ jobs:
       - name: Change PWD
         working-directory: ./scripts
         run: |
+          chmod +x hello.js
           pwd
           ls -la
+          node ./hello.js
+          
     
       - name: Check PWD
         run: |
