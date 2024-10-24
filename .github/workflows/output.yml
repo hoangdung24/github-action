@@ -7,37 +7,38 @@ jobs:
     steps:
       - name: Setup Node ENV
         uses: actions/setup-node@v4
-      - name: Dump Github Context
+
+      - name: Dump github Context
         env:
           EVENT_CONTEXT: ${{ toJSON(github) }}
         run: |
           echo $EVENT_CONTEXT
 
-      - name: Dump Job Context
+      - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
         run: |
           echo $JOB_CONTEXT
 
-      - name: Dump Steps Context
+      - name: Dump steps context
         env:
           STEP_CONTEXT: ${{ toJSON(steps) }}
         run: |
           echo $STEP_CONTEXT
 
-      - name: Dump Runner Context
+      - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJSON(runner) }}
         run: |
           echo $RUNNER_CONTEXT
 
-      - name: Dump SECRETS Context
+      - name: Dump secrets context
         env:
           SECRET_CONTEXT: ${{ toJSON(secrets) }}
         run: |
           echo $SECRET_CONTEXT
 
-      - name: Dump Runner Context
+      - name: Dump vars context
         env:
           VAR_CONTEXT: ${{ toJSON(vars) }}
         run: |
@@ -73,8 +74,18 @@ jobs:
           script: |
             console.log(process.env)
 
-      - uses: actions/upload-artifact@v4
-        name: Upload Artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: SecretsVariables
           path: "env.txt"
+
+      - name: Check PWD
+        run: |
+          pwd
+          ls
+
+      # - name: Change PWD
+      #   working-directory: 
+      #   run: |
+      #     pwd
