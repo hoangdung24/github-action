@@ -5,6 +5,9 @@ jobs:
   print_context:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
+
       - name: Setup Node ENV
         uses: actions/setup-node@v4
 
