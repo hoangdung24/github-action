@@ -86,7 +86,7 @@ jobs:
       - name: Check PWD
         run: |
           pwd
-          ls
+          ls -la
 
       # - name: Change PWD
       #   working-directory: 
