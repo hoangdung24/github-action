@@ -118,10 +118,6 @@ jobs:
     runs-on: ubuntu-latest    
     env:
       HELLO: WORLD
-    strategy:
-      matrix:
-        test-group: [1, 2]
-        node: [14, 16]
       
     steps:
       - name: Check out the repository to the runner
@@ -131,11 +127,9 @@ jobs:
           ls
           echo ${{hashFiles('**/package-lock.json')}}
           echo "Steps ${{ toJSON(steps) }}"
-          echo "Needs ${{ fromJson(needs) }}"
+          echo "Needs ${{ toJSON(needs) }}"
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
-          echo "matrix ${{ toJson(matrix) }}"
-          echo "strategy ${{ toJson(strategy) }}"
           echo "job ${{ toJson(job) }}"
           printenv
 
