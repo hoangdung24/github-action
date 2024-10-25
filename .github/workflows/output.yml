@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       "secret-number": ${{ steps.output-data.outputs.secret-number }}
-      "steps": ${{ steps }}
+      "steps": ${{ toJson(steps) }}
       "eenv": ${{ toJson(env) }}
     steps:
       - name: Check out the repository to the runner
@@ -126,7 +126,7 @@ jobs:
           ls
           echo ${{hashFiles('**/package-lock.json')}}
           echo "Steps ${{ toJSON(steps) }}"
-          echo "Needs ${{ toJSON(needs) }}"
+          echo "Needs ${{ needs }}"
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
           echo "matrix ${{ toJson(matrix) }}"
