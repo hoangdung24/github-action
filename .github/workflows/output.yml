@@ -106,7 +106,7 @@ jobs:
       - name: Printing
         run: |
           ls
-          echo ${{hashFiles('*/package-lock.json')}}
+          echo ${{hashFiles('**/package-lock.json')}}
           echo "Steps ${{ toJSON(steps) }}"
           echo "Needs ${{ toJSON(needs) }}"
 
