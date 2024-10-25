@@ -134,4 +134,4 @@ jobs:
           echo "job ${{ toJson(job) }}"
           printenv
       - name: Use First Action
-        uses: ./.github/actions/first-action/
+        uses: ./
