@@ -120,4 +120,5 @@ jobs:
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
           echo "secrets ${{ toJSON(secrets.SECRET_1) }}"
+          printenv
 
