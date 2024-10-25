@@ -122,6 +122,8 @@ jobs:
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
           echo "matrix ${{ toJson(matrix) }}"
+          echo "matrix ${{ toJson(strategy) }}"
+          echo "matrix ${{ toJson(jobs) }}"
           echo "job ${{ toJson(job) }}"
           printenv
 
