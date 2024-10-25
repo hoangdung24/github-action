@@ -101,6 +101,6 @@ jobs:
     steps:
       - name: Printing
         run: |
-          echo Steps ${{ toJSON(steps) }}
-          echo Needs ${{ toJSON(needs) }}
+          echo "Steps ${{ toJSON(steps) }}"
+          echo "Needs ${{ toJSON(needs) }}"
 
