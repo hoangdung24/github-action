@@ -103,4 +103,5 @@ jobs:
         run: |
           echo "Steps ${{ toJSON(steps) }}"
           echo "Needs ${{ toJSON(needs) }}"
+          echo "Needs.first_job ${{ toJSON(needs.first_job.outputs) }}"
 
