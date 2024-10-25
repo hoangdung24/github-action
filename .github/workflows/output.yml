@@ -137,7 +137,7 @@ jobs:
           printenv
       - name: Use First Action
         run: |
-          node ./index.js
+          node ./index.cjs
       - name: Dump
         run: |
           echo "${{ toJson(steps) }}"
