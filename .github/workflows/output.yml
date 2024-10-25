@@ -11,7 +11,7 @@ jobs:
     outputs:
       "secret-number": ${{ steps.output-data.outputs.secret-number }}
       "steps": ${{ steps }}
-      "eenv": ${{ env }}
+      "eenv": ${{ toJson(env) }}
     steps:
       - name: Check out the repository to the runner
         id: step_1
