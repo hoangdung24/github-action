@@ -134,4 +134,5 @@ jobs:
           echo "job ${{ toJson(job) }}"
           printenv
       - name: Use First Action
-        uses: ./
+        uses: .
+        
