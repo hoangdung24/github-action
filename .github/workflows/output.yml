@@ -121,6 +121,9 @@ jobs:
     
       
     steps:
+      - name: Setup Node ENV
+        id: step_2
+        uses: actions/setup-node@v4
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
       - name: Printing
@@ -134,5 +137,6 @@ jobs:
           echo "job ${{ toJson(job) }}"
           printenv
       - name: Use First Action
-        uses: .
+        run: |
+          node ./index.js
         
