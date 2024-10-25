@@ -97,7 +97,7 @@ jobs:
       - name: Create pseudo error
         continue-on-error: true
         run: |
-          python
+          exit 127
 
       - name: Change PWD
         working-directory: ./scripts
