@@ -108,6 +108,8 @@ jobs:
   next_job:
     needs: first_job
     runs-on: ubuntu-latest
+    env:
+      HELLO: WORLD
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
@@ -119,6 +121,7 @@ jobs:
           echo "Needs ${{ toJSON(needs) }}"
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
-          echo "secrets ${{ toJSON(secrets.SECRET_1) }}"
+          echo "matrix ${{ toJson(matrix) }}"
+          echo "job ${{ toJson(job) }}"
           printenv
 
