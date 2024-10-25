@@ -119,4 +119,5 @@ jobs:
           echo "Needs ${{ toJSON(needs) }}"
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
+          echo "secrets ${{ toJSON(secrets) }}"
 
