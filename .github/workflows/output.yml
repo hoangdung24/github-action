@@ -8,6 +8,7 @@ env:
 jobs:
   first_job:
     runs-on: ubuntu-latest
+    continue-on-error: true
     outputs:
       "secret-number": ${{ steps.output-data.outputs.secret-number }}
       "steps": ${{ toJson(steps) }}
