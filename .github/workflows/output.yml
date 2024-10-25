@@ -126,7 +126,7 @@ jobs:
           ls
           echo ${{hashFiles('**/package-lock.json')}}
           echo "Steps ${{ toJSON(steps) }}"
-          echo "Needs ${{ needs }}"
+          echo "Needs ${{ fromJson(needs) }}"
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
           echo "matrix ${{ toJson(matrix) }}"
