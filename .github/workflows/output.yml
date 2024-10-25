@@ -2,7 +2,7 @@ name: Practice make perfect
 on:
   push:
 jobs:
-  print_context:
+  first_job:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository to the runner
@@ -81,7 +81,7 @@ jobs:
       #     name: SecretsVariables
       #     path: "*.txt"
 
-      
+
       - name: Change PWD
         working-directory: ./scripts
         run: |
@@ -95,4 +95,12 @@ jobs:
           pwd
           ls -la
 
-      
+  next_job:
+    needs: first_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing
+        run: |
+          echo Steps ${{ toJSON(steps) }}
+          echo Needs ${{ toJSON(needs) }}
+
