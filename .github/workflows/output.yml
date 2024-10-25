@@ -136,6 +136,7 @@ jobs:
           echo "job ${{ toJson(job) }}"
           printenv
       - name: Use First Action
+        id: hey_hey
         run: |
           node dist/index.js
       - name: Dump
