@@ -136,9 +136,10 @@ jobs:
           echo "job ${{ toJson(job) }}"
           printenv
       - name: Use First Action
-        id: hey_hey
-        run: |
-          node dist/index.js
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await import('${{ github.workspace }}/dist/index.js')
       - name: Dump
         run: |
           echo "${{ toJson(steps) }}"
