@@ -101,10 +101,12 @@ jobs:
     needs: first_job
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
       - name: Printing
         run: |
           ls
+          echo ${{hashFiles('*/package-lock.json')}}
           echo "Steps ${{ toJSON(steps) }}"
           echo "Needs ${{ toJSON(needs) }}"
-          echo "Needs.first_job ${{ toJSON(needs.first_job.outputs) }}"
 
