@@ -1,6 +1,8 @@
 name: Practice make perfect
 on:
   push:
+env:
+  YO: BRO
 jobs:
   first_job:
     runs-on: ubuntu-latest
@@ -115,4 +117,5 @@ jobs:
           echo ${{hashFiles('**/package-lock.json')}}
           echo "Steps ${{ toJSON(steps) }}"
           echo "Needs ${{ toJSON(needs) }}"
+          echo "Needs ${{ toJSON(env) }}"
 
