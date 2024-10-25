@@ -6,6 +6,7 @@ env:
 jobs:
   first_job:
     runs-on: ubuntu-latest
+
     outputs:
       "secret-number": ${{ steps.output-data.outputs.secret-number }}
       "steps": ${{ toJson(steps) }}
@@ -107,9 +108,13 @@ jobs:
 
   next_job:
     needs: first_job
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
     env:
       HELLO: WORLD
+    strategy:
+      matrix:
+        test-group: [1, 2]
+        node: [14, 16]
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
@@ -122,7 +127,7 @@ jobs:
           echo "env ${{ toJSON(env) }}"
           echo "vars ${{ toJSON(vars) }}"
           echo "matrix ${{ toJson(matrix) }}"
-          echo "matrix ${{ toJson(strategy) }}"
+          echo "strategy ${{ toJson(strategy) }}"
           echo "job ${{ toJson(job) }}"
           printenv
 
