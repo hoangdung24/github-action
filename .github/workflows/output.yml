@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       "secret-number": ${{ steps.output-data.outputs.secret-number }}
-      "steps": ${{ toJson(steps) }}
-      "eenv": ${{ toJson(env) }}
+      "steps": ${{ steps }}
+      "eenv": ${{ env }}
     steps:
       - name: Check out the repository to the runner
         id: step_1
@@ -117,6 +117,7 @@ jobs:
       matrix:
         test-group: [1, 2]
         node: [14, 16]
+      
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
