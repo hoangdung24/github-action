@@ -94,6 +94,10 @@ jobs:
       #     name: SecretsVariables
       #     path: "*.txt"
 
+      - name: Create pseudo error
+        continue-on-error: true
+        run: |
+          python
 
       - name: Change PWD
         working-directory: ./scripts
