@@ -131,13 +131,8 @@ jobs:
       - name: Printing
         run: |
           ls -la
-          # echo ${{hashFiles('**/package-lock.json')}}
-          # echo "Steps ${{ toJSON(steps) }}"
-          # echo "Needs ${{ toJSON(needs) }}"
-          # echo "env ${{ toJSON(env) }}"
-          # echo "vars ${{ toJSON(vars) }}"
-          # echo "job ${{ toJson(job) }}"
-          # printenv
+          echo ${{hashFiles('**/package-lock.json')}}
+          printenv
       - name: Use First Action
         uses: ./
       - name: Use First Script
