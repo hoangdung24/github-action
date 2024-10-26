@@ -5,6 +5,9 @@ on:
   workflow_call:
 env:
   YO: BRO
+concurrency: 
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   first_job:
     runs-on: ubuntu-latest
