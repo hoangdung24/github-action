@@ -1,7 +1,7 @@
 name: "Example"
 description: "Receives file and generates output"
-outputs:
-  description: "Path to results file"
+# outputs:
+#   description: "Path to results file"
 runs:
   using: "node20"
   main: "dist/index.js"
