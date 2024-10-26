@@ -4,4 +4,4 @@ outputs:
   description: Path to results file
 runs:
   using: node20
-  main: .github/actions/first-action/index.js
+  main: dist/index.js

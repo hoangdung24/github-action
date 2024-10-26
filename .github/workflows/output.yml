@@ -136,6 +136,8 @@ jobs:
           echo "job ${{ toJson(job) }}"
           printenv
       - name: Use First Action
+        uses: ./
+      - name: Use First Script
         uses: actions/github-script@v7
         with:
           script: |
