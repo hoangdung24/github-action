@@ -147,4 +147,4 @@ jobs:
 
       - name: Dump
         run: |
-          echo "${{steps}}"
+          echo "${{ toJSON(steps) }}"
