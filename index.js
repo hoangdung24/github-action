@@ -1,10 +1,8 @@
-import core from "@actions/core";
-import github from "@actions/github";
+/** @param {import('@types/github-script').AsyncFunctionArguments} AsyncFunctionArguments */
+export default async ({ core, context, github }) => {
+  core.setOutput("time", Date.now());
 
-try {
-  core.setOutput("time", time);
-
-  const payload = JSON.stringify(github.context.payload);
-
-  console.log(`The event payload: ${payload}`);
-} catch (err) {}
+  console.log(JSON.stringify(github));
+  console.log(JSON.stringify(context));
+  console.log(process.cwd());
+};
