@@ -13,8 +13,10 @@
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0",
     "@vercel/ncc": "^0.38.2",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "smee-client": "^2.0.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
