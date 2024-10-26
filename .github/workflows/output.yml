@@ -162,6 +162,9 @@ jobs:
 
       - name: Dump
         uses: actions/github-script@v7
+        env:
+          STEPS: ${{ toJson(steps) }}
         with:
           script: |
-            console.log(steps)
+            const { STEPS } = process.env;
+            console.log(STEPS);
