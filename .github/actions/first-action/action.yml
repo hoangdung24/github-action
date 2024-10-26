@@ -5,4 +5,4 @@ description: Receives file and generates output
 runs:
   using: node20
   # main: dist/index.js
-  main: .github/actions/first-action/index.js
+  main: index.js
