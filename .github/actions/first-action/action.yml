@@ -1,8 +1,8 @@
 name: Example
 description: Receives file and generates output
-# outputs:
-#   description: "Path to results file"
+outputs:
+  time:
+    description: "Action Time"
 runs:
   using: node20
-  # main: dist/index.js
   main: index.js
