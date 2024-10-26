@@ -7,13 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "_smee": "smee --url https://smee.io/oX7HzHCI18hQqvCg --path /webhook --port 3000",
+    "smee": "dotenv -e .env -- npm run _smee",
+    "smee-test": "dotenv -e .env -- echo WEBHOOK_PROXY_URL"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0",
     "@vercel/ncc": "^0.38.2",
     "dotenv": "^16.4.5",
+    "express": "^4.21.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "smee-client": "^2.0.4"
